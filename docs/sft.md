@@ -7,7 +7,7 @@ sidebar_label: "SFT: Tinh chỉnh có Giám sát"
 
 ## Tại sao (hầu hết) mọi pipeline post-training đều bắt đầu bằng SFT
 
-Nếu bạn dành thời gian trên X ngày nay, bạn có thể nghĩ Reinforcement Learning (RL) là trò chơi duy nhất. Mỗi ngày mang đến những viết tắt mới, tinh chỉnh thuật toán, và tranh luận nảy lửa về việc liệu RL có thể khơi gợi khả năng mới hay không.
+Nếu bạn dành thời gian trên X ngày nay, bạn có thể nghĩ Reinforcement Learning (RL — Học Tăng cường) là trò chơi duy nhất. Mỗi ngày mang đến những viết tắt mới, tinh chỉnh thuật toán, và tranh luận nảy lửa về việc liệu RL có thể khơi gợi khả năng mới hay không.
 
 Như chúng ta sẽ thấy, RL thực sự hoạt động, nhưng đi kèm với nhiều đánh đổi thực tế.
 

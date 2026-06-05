@@ -97,7 +97,7 @@ SmolLM3 bắt đầu bằng chọn mục tiêu **3B tham số**. Dựa trên cá
 
 ### Chọn thời gian huấn luyện
 
-Thời gian huấn luyện thường được quyết định bởi lượng compute sẵn có. SmolLM3 có **384 H100** trong khoảng một tháng, cung cấp ngân sách cho **11T token** huấn luyện (giả sử MFU — Model FLOPs Utilization khoảng ~30%).
+Thời gian huấn luyện thường được quyết định bởi lượng compute sẵn có. SmolLM3 có **384 H100** trong khoảng một tháng, cung cấp ngân sách cho **11T token** huấn luyện (giả sử Model FLOPs Utilization (MFU — Hiệu suất sử dụng FLOPs của mô hình) khoảng ~30%).
 
 ### Giá trị thực tế của Scaling Laws
 

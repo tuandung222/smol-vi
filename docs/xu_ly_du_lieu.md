@@ -163,9 +163,8 @@ Không có quy tắc phổ quát, nhưng thường theo các nguyên tắc:
 
 ## Quy tắc Thực hành
 
-:::important Nguyên tắc cốt lõi
-Data curation thường mang lại lợi ích hiệu suất lớn nhất — lớn hơn cả đổi mới kiến trúc hay tinh chỉnh optimizer.
-:::
+> [!IMPORTANT]
+> **Nguyên tắc cốt lõi:** Data curation thường mang lại lợi ích hiệu suất lớn nhất — lớn hơn cả đổi mới kiến trúc hay tinh chỉnh optimizer.
 
 - **Mixture phụ thuộc vào mô hình**: Tỷ lệ tối ưu cho 1B không nhất thiết tối ưu cho 3B. Chạy data ablation ở quy mô mục tiêu khi có thể.
 

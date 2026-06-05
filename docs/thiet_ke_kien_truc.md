@@ -15,7 +15,7 @@ Hãy dẫn bằng ví dụ — các mục tiêu hướng dẫn thiết kế Smol
 - ✅ Khả năng **toán và lập trình** vững chắc
 - ✅ Xử lý **context dài** mạnh mẽ
 
-Điều này dẫn chúng tôi đến **mô hình dense 3B tham số**: đủ lớn cho khả năng mạnh mẽ nhưng đủ nhỏ để chạy thoải mái trên điện thoại. Chúng tôi chọn dense transformer thay vì MoE hay hybrid, do ràng buộc bộ nhớ thiết bị biên và dòng thời gian dự án (~3 tháng).
+Điều này dẫn chúng tôi đến **mô hình dense 3B tham số**: đủ lớn cho khả năng mạnh mẽ nhưng đủ nhỏ để chạy thoải mái trên điện thoại. Chúng tôi chọn dense transformer thay vì Mixture of Experts (MoE — Hỗn hợp Chuyên gia) hay hybrid, do ràng buộc bộ nhớ thiết bị biên và dòng thời gian dự án (~3 tháng).
 
 ---
 
@@ -36,9 +36,8 @@ Nếu nhìn vào các mô hình gần đây như Qwen3, Gemma 3, hay DeepSeek-V3
 
 > Nếu chưa hiểu một số thuật ngữ như MLA, NoPE, hay WSD — đừng lo; chúng tôi sẽ giải thích từng cái trong phần này.
 
-:::tip 📚 Tham khảo thêm
-Sebastian Raschka có bài ["Big LLM Architecture Comparison"](https://sebastianraschka.com/blog/2025/the-big-llm-architecture-comparison.html) cho cái nhìn tổng quan tuyệt vời về kiến trúc LLM hiện đại.
-:::
+> [!TIP] 📚 Tham khảo thêm
+> Sebastian Raschka có bài ["Big LLM Architecture Comparison"](https://sebastianraschka.com/blog/2025/the-big-llm-architecture-comparison.html) cho cái nhìn tổng quan tuyệt vời về kiến trúc LLM hiện đại.
 
 ---
 
@@ -351,9 +350,8 @@ Các biến thể đáng chú ý:
 - **Mamba-2**: Dùng trong Nemotron-H, Falcon H1, Granite-4.0-h
 - **Gated DeltaNet**: Dùng trong Qwen3-Next
 
-:::warning ⚠️ Thực tế sản xuất
-MiniMax-M2 quyết định **không dùng** hybrid/linear attention mặc dù kết quả sớm hứa hẹn. Ở quy mô lớn, họ phát hiện "thiếu hụt rõ ràng trong các nhiệm vụ suy luận phức tạp, đa bước." Điều này cho thấy khoảng cách giữa nghiên cứu và thực tế sản xuất.
-:::
+> [!WARNING] ⚠️ Thực tế sản xuất
+> MiniMax-M2 quyết định **không dùng** hybrid/linear attention mặc dù kết quả sớm hứa hẹn. Ở quy mô lớn, họ phát hiện "thiếu hụt rõ ràng trong các nhiệm vụ suy luận phức tạp, đa bước." Điều này cho thấy khoảng cách giữa nghiên cứu và thực tế sản xuất.
 
 ### Chọn Kiến Trúc Cơ Sở: Dense vs MoE vs Hybrid
 

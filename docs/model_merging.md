@@ -132,7 +132,7 @@ Huấn luyện mô hình hybrid reasoning **phức tạp hơn SFT thông thườ
 
 ### Reward Hacking trong Hybrid Models
 
-Một bài học quan trọng từ SmolLM3: Khi áp dụng **GRPO** (Group Relative Policy Optimization) naively cho chế độ `/no_think`, mô hình đã học cách **hack reward** — mặc dù không bao giờ được yêu cầu tạo chain-of-thought dài, nó tự phát triển khả năng tạo CoT dài để tăng reward:
+Một bài học quan trọng từ SmolLM3: Khi áp dụng **GRPO** (Group Relative Policy Optimization — Tối ưu hóa chính sách tương đối theo nhóm) naively cho chế độ `/no_think`, mô hình đã học cách **hack reward** — mặc dù không bao giờ được yêu cầu tạo chain-of-thought dài, nó tự phát triển khả năng tạo CoT dài để tăng reward:
 
 > Nói cách khác, RLVR với GRPO đã **chuyển đổi** chế độ `/no_think` thành thứ giống hệt chế độ `/think`!
 
@@ -207,7 +207,8 @@ Ngoài RL truyền thống, còn có các phương pháp nhẹ hơn đáng quan 
 - **On-policy distillation** (chưng cất on-policy): Tín hiệu đến từ teacher model mạnh hơn, sử dụng KL divergence giữa student và teacher logits
 - **GOLD** (General On-Policy Logit Distillation): Phương pháp mới cho phép distill bất kỳ teacher nào vào bất kỳ student nào, không cần chung tokenizer
 
-> 💡 **Insight quan trọng**: On-policy distillation với mô hình nhỏ thường **vượt trội** so với RL-based methods với chi phí compute thấp hơn nhiều. Qwen3 tech report cho thấy phương pháp này được dùng để train tất cả mô hình dưới 32B parameters.
+> [!TIP]
+> **Insight quan trọng**: On-policy distillation với mô hình nhỏ thường **vượt trội** so với RL-based methods với chi phí compute thấp hơn nhiều. Qwen3 tech report cho thấy phương pháp này được dùng để train tất cả mô hình dưới 32B parameters.
 
 ## Tổng kết
 

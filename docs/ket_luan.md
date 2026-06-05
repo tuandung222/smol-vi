@@ -21,7 +21,8 @@ Chúng ta bắt đầu bằng cách trình bày **Training Compass** (La bàn hu
 
 Xuyên suốt cả hai giai đoạn — pretraining và post-training — chúng ta liên tục quay lại cùng những **insight cốt lõi**:
 
-> 🔑 **Validate mọi thứ qua thí nghiệm**, thay đổi từng thứ một, kỳ vọng scale sẽ phá vỡ mọi thứ theo cách mới, và để **use case dẫn dắt** quyết định thay vì chạy theo mọi paper mới.
+> [!IMPORTANT]
+> **Validate mọi thứ qua thí nghiệm**, thay đổi từng thứ một, kỳ vọng scale sẽ phá vỡ mọi thứ theo cách mới, và để **use case dẫn dắt** quyết định thay vì chạy theo mọi paper mới.
 
 Tuân theo quy trình này là cách SmolLM3 được huấn luyện — một multilingual reasoner 3B tham số cạnh tranh với long context. Trong suốt quá trình, đội ngũ đã học được rất nhiều về **cái gì hiệu quả, cái gì hỏng, và cách debug khi mọi thứ đi sai**. Tất cả đã được ghi nhận — cả thành công lẫn thất bại.
 

@@ -23,7 +23,7 @@ Hơn nữa, so sánh optimizer một cách công bằng khó hơn bạn tưởng
 
 Adam (Adaptive Momentum Estimation — Ước lượng Động lượng Thích ứng) là một kỹ thuật tối ưu bậc nhất, nghĩa là nó chỉ nhìn vào gradient. Nó điều chỉnh learning rate cho từng tham số bằng cách sử dụng momentum (động lượng) từ các gradient trước đó.
 
-Tại sao lại có chữ W? Trong SGD (Stochastic Gradient Descent — Giảm gradient ngẫu nhiên) tiêu chuẩn, ta có thể đơn giản cộng $\lambda \theta^2$ (với $\theta$ là trọng số) vào hàm mất mát để áp dụng L2 regularization (chính quy hóa L2). Nhưng nếu làm tương tự với Adam, learning rate thích ứng cũng sẽ ảnh hưởng đến L2 regularization, khiến cường độ chính quy hóa phụ thuộc vào độ lớn gradient — không phải điều ta muốn. **AdamW** áp dụng weight decay (phân rã trọng số) tách biệt khỏi vòng lặp tối ưu chính để khắc phục vấn đề này.
+Tại sao lại có chữ W? Trong SGD (Stochastic Gradient Descent — Giảm gradient ngẫu nhiên) tiêu chuẩn, ta có thể đơn giản cộng $\lambda \theta^2$ (với $\theta$ là trọng số) vào hàm mất mát để áp dụng L2 regularization (chính quy hóa L2). Nhưng nếu làm tương tự với Adam, learning rate thích ứng cũng sẽ ảnh hưởng đến L2 regularization, khiến cường độ chính quy hóa phụ thuộc vào độ lớn gradient — không phải điều ta muốn. **AdamW** áp dụng weight decay (suy giảm trọng số) tách biệt khỏi vòng lặp tối ưu chính để khắc phục vấn đề này.
 
 Điều thú vị là trong vài năm qua, các siêu tham số AdamW gần như không thay đổi:
 
@@ -159,9 +159,8 @@ Khi mở rộng lên 3B, gặp phân kỳ thường xuyên hơn với Muon và A
 
 ## Quy tắc Thực hành
 
-:::tip TL;DR
-Cân bằng giữa khám phá và thực thi. Hoàn thành tốt hơn hoàn hảo.
-:::
+> [!TIP] TL;DR
+> Cân bằng giữa khám phá và thực thi. Hoàn thành tốt hơn hoàn hảo.
 
 - **Khi nghi ngờ, chọn linh hoạt và ổn định hơn hiệu suất đỉnh**. Nếu hai phương pháp có hiệu suất ngang nhau, chọn cái linh hoạt hơn hoặc có triển khai chín muồi và ổn định hơn. Lịch trình learning rate như WSD cho phép mở rộng huấn luyện hoặc chạy thí nghiệm giữa chừng có giá trị hơn lịch trình cứng nhắc có thể hội tụ tốt hơn chút ít.
 

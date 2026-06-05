@@ -5,9 +5,9 @@ sidebar_label: 'Giới thiệu'
 
 # Giới thiệu
 
-:::info 📖 Bản dịch Tiếng Việt
-Tài liệu này là bản dịch tiếng Việt của **"The Smol Training Playbook: The Secrets to Building World-Class LLMs"** được xuất bản bởi Hugging Face. Bản gốc tiếng Anh có tại [huggingface.co](https://huggingfacetb-smol-training-playbook.hf.space/). Các thuật ngữ kỹ thuật quan trọng được giữ nguyên tiếng Anh kèm giải thích tiếng Việt khi xuất hiện lần đầu.
-:::
+> [!NOTE]
+> 📖 **Bản dịch Tiếng Việt**
+> Tài liệu này là bản dịch tiếng Việt của **"The Smol Training Playbook: The Secrets to Building World-Class LLMs"** được xuất bản bởi Hugging Face. Bản gốc tiếng Anh có tại [huggingface.co](https://huggingfacetb-smol-training-playbook.hf.space/). Các thuật ngữ kỹ thuật quan trọng được giữ nguyên tiếng Anh kèm giải thích tiếng Việt khi xuất hiện lần đầu.
 
 > *Một hành trình thực tế xuyên suốt những thách thức, quyết định, và thực tế lộn xộn đằng sau việc huấn luyện các mô hình ngôn ngữ đạt đẳng cấp thế giới.*
 
@@ -78,7 +78,7 @@ Một cuộc thảo luận cấp cao về việc liệu bạn có nên pretrain 
 Các phần sau la bàn huấn luyện bao gồm mọi thứ bạn cần biết để xây dựng một công thức vững chắc cho lần pretraining của riêng mình: cách chạy ablation, chọn phương pháp đánh giá, trộn nguồn dữ liệu, đưa ra lựa chọn kiến trúc, tinh chỉnh siêu tham số, và cuối cùng chịu đựng cuộc marathon huấn luyện. Phần này cũng phù hợp nếu bạn không định pretrain từ đầu mà quan tâm đến **continued pretraining** (huấn luyện tiếp tục, hay còn gọi là mid-training).
 
 ### 🎯 Post-training (Huấn luyện giai đoạn sau)
-Trong phần này, bạn sẽ học tất cả các thủ thuật cần thiết để khai thác tối đa mô hình pretrained. Chúng tôi sẽ bao quát toàn bộ bảng chữ cái post-training, bắt đầu với **SFT** (Supervised Fine-Tuning — Tinh chỉnh có giám sát), **DPO** (Direct Preference Optimization — Tối ưu hóa sở thích trực tiếp), và **GRPO** (Group Relative Policy Optimization), cũng như nghệ thuật đen tối và giả kim của model merging (gộp mô hình).
+Trong phần này, bạn sẽ học tất cả các thủ thuật cần thiết để khai thác tối đa mô hình pretrained. Chúng tôi sẽ bao quát toàn bộ bảng chữ cái post-training, bắt đầu với **SFT** (Supervised Fine-Tuning — Tinh chỉnh có giám sát), **DPO** (Direct Preference Optimization — Tối ưu hóa sở thích trực tiếp), và **GRPO** (Group Relative Policy Optimization — Tối ưu hóa chính sách tương đối nhóm), cũng như nghệ thuật đen tối và giả kim của model merging (gộp mô hình).
 
 ### 🖥️ Hạ tầng (Infrastructure)
 Nếu pretraining là chiếc bánh và post-training là lớp kem phủ và quả cherry trên cùng, thì hạ tầng là **chiếc lò công nghiệp**. Không có nó, không gì xảy ra, và nếu nó hỏng, buổi nướng bánh Chủ nhật vui vẻ của bạn biến thành mối nguy cháy nổ. Phần này đi qua bố cục GPU, mô hình giao tiếp giữa CPU/GPU/node/lưu trữ, và cách xác định cũng như khắc phục các điểm nghẽn.

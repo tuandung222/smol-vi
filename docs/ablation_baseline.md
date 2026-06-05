@@ -9,9 +9,9 @@ Trước khi có thể bắt đầu huấn luyện một LLM (Large Language Mod
 
 Cách các quyết định này được đưa ra là một câu hỏi thường gặp. Đôi khi người ta kỳ vọng rằng chúng đòi hỏi suy nghĩ sâu sắc. Và mặc dù tư duy chiến lược là thiết yếu, chỉ lý luận thôi là không đủ. Mọi thứ không phải lúc nào cũng trực quan với LLM, và các giả thuyết về những gì nên hoạt động đôi khi không đúng trong thực tế.
 
-:::note 📝 Ví dụ phản trực giác
-Lấy [arXiv](https://arxiv.org/) làm ví dụ — một bộ sưu tập khổng lồ kiến thức khoa học của nhân loại. Theo trực giác, huấn luyện trên dữ liệu STEM phong phú như vậy sẽ tạo ra mô hình vượt trội, đúng không? Trong thực tế, không hẳn — đặc biệt cho mô hình nhỏ, nơi nó thậm chí có thể *làm giảm* hiệu suất. Tại sao? Dù các bài báo arXiv đầy kiến thức, chúng rất chuyên biệt và được viết trong phong cách học thuật hẹp, khá khác biệt so với văn bản đa dạng, tổng quát mà mô hình học tốt nhất.
-:::
+> [!NOTE]
+> 📝 **Ví dụ phản trực giác**
+> Lấy [arXiv](https://arxiv.org/) làm ví dụ — một bộ sưu tập khổng lồ kiến thức khoa học của nhân loại. Theo trực giác, huấn luyện trên dữ liệu STEM phong phú như vậy sẽ tạo ra mô hình vượt trội, đúng không? Trong thực tế, không hẳn — đặc biệt cho mô hình nhỏ, nơi nó thậm chí có thể *làm giảm* hiệu suất. Tại sao? Dù các bài báo arXiv đầy kiến thức, chúng rất chuyên biệt và được viết trong phong cách học thuật hẹp, khá khác biệt so với văn bản đa dạng, tổng quát mà mô hình học tốt nhất.
 
 Vậy làm sao biết cái gì hoạt động? **Chúng ta chạy rất nhiều thí nghiệm, như những nhà thực nghiệm giỏi!** Machine learning không phải toán thuần túy, mà thực sự là một khoa học thực nghiệm.
 
@@ -71,11 +71,11 @@ Bạn có một baseline hoạt động và phù hợp. Bạn *có thể* dừng
 
 Kỷ luật giữ bạn đúng hướng là **derisking (giảm rủi ro):**
 
-:::important ⚠️ Nguyên tắc Vàng
-**Không bao giờ thay đổi bất cứ điều gì trừ khi bạn đã kiểm tra rằng nó có ích.**
-
-Một thay đổi được "derisked" khi kiểm tra cho thấy nó hoặc cải thiện hiệu suất trên khả năng mục tiêu hoặc cung cấp lợi ích có ý nghĩa (nhanh hơn khi suy luận, ít bộ nhớ hơn, ổn định hơn) mà không làm giảm hiệu suất vượt quá giới hạn chấp nhận được.
-:::
+> [!IMPORTANT]
+> ⚠️ **Nguyên tắc Vàng**
+> **Không bao giờ thay đổi bất cứ điều gì trừ khi bạn đã kiểm tra rằng nó có ích.**
+>
+> Một thay đổi được "derisked" khi kiểm tra cho thấy nó hoặc cải thiện hiệu suất trên khả năng mục tiêu hoặc cung cấp lợi ích có ý nghĩa (nhanh hơn khi suy luận, ít bộ nhớ hơn, ổn định hơn) mà không làm giảm hiệu suất vượt quá giới hạn chấp nhận được.
 
 **Phương pháp:**
 1. Bắt đầu bằng kiểm tra các thay đổi hứa hẹn so với baseline hiện tại
@@ -94,9 +94,9 @@ Nếu không rõ ràng, **bỏ qua nó**.
 
 Quyết định đầu tiên: framework nào để huấn luyện mô hình và chạy tất cả ablation.
 
-:::warning ⚠️ Cảnh báo
-**Đừng làm anh hùng và chuyển đổi framework giữa ablation và lần chạy cuối cùng.** Đó là con đường đến đau khổ.
-:::
+> [!WARNING]
+> ⚠️ **Cảnh báo**
+> **Đừng làm anh hùng và chuyển đổi framework giữa ablation và lần chạy cuối cùng.** Đó là con đường đến đau khổ.
 
 Ba cân nhắc chính:
 1. Framework phải **hỗ trợ kiến trúc mục tiêu**, hoặc cho phép mở rộng dễ dàng
@@ -126,9 +126,9 @@ Hai cách tiếp cận chính:
 1. **Mô hình kích thước đầy đủ, ít token hơn** — VD: SmolLM3 3B trên 100B token thay vì 11T
 2. **Mô hình proxy nhỏ hơn** — VD: Kimi K2 dùng mô hình MoE 3B với 0.5B tham số hoạt động cho ablation
 
-:::tip 💡 Quy tắc chuyển đổi
-Nếu thứ gì đó *làm giảm hiệu suất* ở quy mô nhỏ, bạn có thể tự tin loại bỏ nó ở quy mô lớn. Nếu thứ gì đó *hoạt động* ở quy mô nhỏ, hãy đảm bảo bạn đã huấn luyện trên đủ token để kết luận với xác suất cao rằng phát hiện sẽ ngoại suy.
-:::
+> [!TIP]
+> 💡 **Quy tắc chuyển đổi**
+> Nếu thứ gì đó *làm giảm hiệu suất* ở quy mô nhỏ, bạn có thể tự tin loại bỏ nó ở quy mô lớn. Nếu thứ gì đó *hoạt động* ở quy mô nhỏ, hãy đảm bảo bạn đã huấn luyện trên đủ token để kết luận với xác suất cao rằng phát hiện sẽ ngoại suy.
 
 ### Thiết lập của SmolLM3
 
@@ -206,9 +206,9 @@ Cho các ablation, chúng tôi sẽ sửa đổi các phần khác nhau tùy the
 - Phần `optimizer` cho siêu tham số optimizer và huấn luyện
 - Phần `data_stages` cho tuyển chọn dữ liệu
 
-:::important ⚠️ Nguyên tắc Ablation
-**Chỉ thay đổi một biến mỗi ablation**, giữ mọi thứ khác không đổi. Nếu bạn thay đổi nhiều thứ và hiệu suất cải thiện, bạn sẽ không biết nguyên nhân. Kiểm tra các sửa đổi riêng lẻ, sau đó kết hợp các sửa đổi thành công và đánh giá lại.
-:::
+> [!IMPORTANT]
+> ⚠️ **Nguyên tắc Ablation**
+> **Chỉ thay đổi một biến mỗi ablation**, giữ mọi thứ khác không đổi. Nếu bạn thay đổi nhiều thứ và hiệu suất cải thiện, bạn sẽ không biết nguyên nhân. Kiểm tra các sửa đổi riêng lẻ, sau đó kết hợp các sửa đổi thành công và đánh giá lại.
 
 ### Đếm Tham Số
 
@@ -287,20 +287,20 @@ Ablation tuyệt vời, nhưng chúng **cần thời gian GPU**. Bảng sau cho 
 | Hạng mục | Giờ GPU | Ghi chú |
 |----------|---------|---------|
 | **Lần chạy chính** | 276,480 | Bao gồm downtime không thường xuyên |
-| **Ablation + Debug** | 161,280 | >100 ablation qua toàn bộ quá trình phát triển |
+| **Ablation + Debug** | 161,280 | &gt;100 ablation qua toàn bộ quá trình phát triển |
 | **Đánh giá** | ~10,000 | Bộ đánh giá đầy đủ mỗi 10B token qua 11T token |
 
 > **Sự thật quan trọng:** Ablation và debug tiêu tốn tổng cộng **161,280 giờ GPU** — hơn một nửa chi phí lần chạy chính!
 
-:::warning ⚠️ Bài học từ DeepSeek-V3
-Khi [DeepSeek-V3](https://huggingface.co/deepseek-ai/DeepSeek-V3) ra mắt, thế giới tập trung vào chi phí huấn luyện $5.6M được báo cáo. Nhiều người hiểu đó là chi phí R&D đầy đủ. Thực tế, nó chỉ phản ánh lần chạy huấn luyện cuối cùng. Chi phí lớn hơn nhiều — và thường vô hình — là trong nghiên cứu: ablation, lần chạy thất bại, và debug dẫn đến công thức cuối cùng.
-:::
+> [!WARNING]
+> ⚠️ **Bài học từ DeepSeek-V3**
+> Khi [DeepSeek-V3](https://huggingface.co/deepseek-ai/DeepSeek-V3) ra mắt, thế giới tập trung vào chi phí huấn luyện $5.6M được báo cáo. Nhiều người hiểu đó là chi phí R&D đầy đủ. Thực tế, nó chỉ phản ánh lần chạy huấn luyện cuối cùng. Chi phí lớn hơn nhiều — và thường vô hình — là trong nghiên cứu: ablation, lần chạy thất bại, và debug dẫn đến công thức cuối cùng.
 
 **Quy tắc lập ngân sách:** Lên kế hoạch cho **chi phí huấn luyện + ablation + buffer cho bất ngờ**.
 
 ---
 
-## Quy Tắc Tham Gia (Rules of Engagement)
+## Quy Tắc Thực Hành (Rules of Engagement)
 
 **TL;DR: Hãy hoang tưởng.**
 

@@ -5,6 +5,8 @@ sidebar_label: "GRPO & Reinforcement Learning"
 
 # GRPO và Học Tăng cường (Reinforcement Learning)
 
+Group Relative Policy Optimization (GRPO — Tối ưu hóa Policy theo Nhóm Tương đối) là một trong những thuật toán RL hiệu quả nhất cho LLM hiện nay. Chương này khám phá GRPO cùng các phương pháp RL khác cho post-training.
+
 ## Vượt ra ngoài Nhãn Giám sát: Going Online
 
 Nếu bạn muốn mô hình **nhất quán giải bài toán, sinh executable code, hoặc lên kế hoạch qua nhiều bước**, bạn thường cần một **reward signal** (tín hiệu thưởng) thay vì chỉ "A tốt hơn B."
@@ -19,7 +21,7 @@ Nếu bạn muốn mô hình **nhất quán giải bài toán, sinh executable c
 
 ## Hai hương vị RL cho LLM
 
-### RLHF — RL từ Phản hồi Con người
+### RLHF (Reinforcement Learning from Human Feedback — Học Tăng cường từ Phản hồi Con người)
 
 Cách tiếp cận này, phổ biến nhờ paper InstructGPT của OpenAI, là nền tảng cho GPT-3.5 và nhiều LLM hiện đại:
 
@@ -30,7 +32,7 @@ Cách tiếp cận này, phổ biến nhờ paper InstructGPT của OpenAI, là 
 > [!WARNING]
 > Vì reward model chỉ *xấp xỉ* preference con người, nó có thể khuyến khích **reward hacking** — mô hình phát ra chuỗi out-of-distribution như "the the the the" nhận reward giả cao và bị ghi vào mô hình qua RL loop.
 
-### RLVR — RL với Reward Có thể Xác minh
+### RLVR (Reinforcement Learning with Verifiable Rewards — Học Tăng cường với Reward Có thể Xác minh)
 
 Cách tiếp cận này, phổ biến nhờ DeepSeek-R1, sử dụng **verifier** kiểm tra output mô hình theo tiêu chí đúng đắn rõ ràng:
 
@@ -144,7 +146,7 @@ Một số phương pháp on-policy nhẹ hơn đã được đề xuất:
 |-------------|---------------|---------|------------|
 | **GRPO/REINFORCE** | On-policy RL với verifiable rewards | Mạnh nhất cho reasoning | Phức tạp, tốn compute |
 | **Online DPO** | Liên tục sinh response mới + preference label | Ít phức tạp hơn RL đầy đủ, match GRPO trên math | Cần reward model/grader |
-| **On-policy Distillation** | Student sample responses, KL divergence với teacher logits | Hiệu quả compute nhất, vượt trội RL cho small model | Teacher và student phải cùng tokenizer |
+| **On-policy Distillation** | Student sample responses, KL divergence (phân kỳ KL) với teacher logits | Hiệu quả compute nhất, vượt trội RL cho small model | Teacher và student phải cùng tokenizer |
 
 ### On-policy Distillation: Hiệu quả bất ngờ
 
